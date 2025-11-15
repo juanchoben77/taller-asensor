@@ -1,0 +1,14 @@
+public  class botonAscensor extends boton {
+    private int pisoDestino;
+
+    public botonAscensor(int pisoDestino) {
+        this.pisoDestino = pisoDestino;
+    
+}
+public void enviarDestino(Ascensor ascensor, SistemaControl sistema, Modulonotificaciones notificaciones) {
+    presionar(notificaciones);
+    System.out.println(" Solicitud interna: usuario seleccionó el piso " + pisoDestino + " desde el ascensor");
+    sistema.recibirSolicitudInterna(pisoDestino);
+    ascensor.agregarDestino(pisoDestino);
+}
+}
