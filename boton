@@ -1,0 +1,30 @@
+public class boton {
+    protected boolean iluminado;
+    protected boolean funcionando;
+
+    public boton() {
+        this.funcionando = true;
+        this.iluminado = false;
+    }
+
+    public void presionar(Modulonotificaciones notificaciones) {
+        if (funcionando) {
+            iluminar();
+        } else {
+            notificaciones.registrarFalla("Botón defectuoso detectado.");
+        }
+    }
+
+    public void iluminar() {
+        iluminado = true;
+        System.out.println(" Botón iluminado");
+    }
+
+    public void apagarLuz() {
+        iluminado = false;
+    }
+
+    public void setFuncionando(boolean estado) {
+        this.funcionando = estado;
+    }
+}
