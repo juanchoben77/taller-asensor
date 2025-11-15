@@ -1,0 +1,31 @@
+import java.util.List;
+import java.util.ArrayList;
+
+
+public class Modulonotificaciones {
+    private List<String> alertas;
+    private int totalAlertas;
+
+    public Modulonotificaciones() {
+         alertas = new ArrayList<>();
+        totalAlertas = 0;
+    }
+
+    public void registrarFalla(String mensaje) {
+        totalAlertas++;
+        alertas.add(mensaje);
+        System.out.println(" ALERTA #" + totalAlertas + ": " + mensaje);
+    }
+
+    public void registrarActividad(String mensaje) {
+        System.out.println(" LOG: " + mensaje);
+    }
+
+    public void mostrarHistorial() {
+        System.out.println("\n===== HISTORIAL DE ALERTAS =====");
+        for (String a : alertas) {
+            System.out.println(a);
+        }
+        System.out.println("Total de alertas: " + totalAlertas);
+    }
+}
