@@ -1,0 +1,54 @@
+public class Puerta {
+
+   private boolean abierta ;
+   private boolean sensorObstaculo;
+
+   public Puerta() {
+    this.abierta = false;   
+    this.sensorObstaculo = false;
+    
+   }
+
+   public void abrir() {
+      this.abierta = true;
+      System.out.println("x: Puertas abiertas");
+   }
+
+   public void cerrar(Modulonotificaciones var1) {
+      if (!this.sensorObstaculo) {
+         this.abierta = false;
+         System.out.println("x: Puertas cerradas");
+      } else {
+         var1.registrarFalla(" Obstáculo detectado, puerta no puede cerrarse.");
+      }
+
+   }
+
+   public void detectarObstaculo(boolean var1) {
+      this.sensorObstaculo = var1;
+   }
+
+   public void mantenerAbierta() {
+      System.out.println("x: Modo mantener puerta abierta activado.");
+      this.abierta = true;
+   }
+     
+   
+
+    public boolean isAbierta() {
+        return this.abierta;
+    }
+
+   
+    public boolean isSensorObstaculo() {
+        return this.sensorObstaculo;
+    }
+
+    public void setAbierta(boolean abierta) {
+        this.abierta = abierta;
+    }
+    public void setSensorObstaculo(boolean sensorObstaculo) {
+        this.sensorObstaculo = sensorObstaculo;
+    }
+
+   }
