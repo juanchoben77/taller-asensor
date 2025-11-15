@@ -1,0 +1,24 @@
+public class Piso {
+    private int numero;
+    private botonPiso botonSubir;
+    private botonPiso botonBajar;
+
+    public Piso(int numero) {
+        this.numero = numero;
+        botonSubir = new botonPiso("subir");
+        botonBajar = new botonPiso("bajar");
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void solicitarAscensor(SistemaControl sistema, String direccion, Modulonotificaciones notificaciones) {
+        if (direccion.equalsIgnoreCase("subir")) {
+            botonSubir.enviarSolicitud(sistema, numero, notificaciones);
+        } else {
+            botonBajar.enviarSolicitud(sistema, numero, notificaciones);
+        }
+    }
+}
+
