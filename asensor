@@ -1,0 +1,47 @@
+import java.util.Queue;
+import java.util.LinkedList;
+
+
+class Ascensor{
+    private int pisoActual;
+    private String direccion; // "subiendo", "bajando", "detenido"
+    private Puerta puerta;
+    private Queue<Integer> destinos;
+    private Modulonotificaciones notificaciones;
+
+    public Ascensor(Modulonotificaciones notificaciones) {
+        this.notificaciones = notificaciones;
+        pisoActual = 1;
+        direccion = "detenido";
+        puerta = new Puerta();
+        destinos = new LinkedList<>();
+    }
+
+    public void agregarDestino(int piso) {
+        destinos.add(piso);
+        System.out.println(" Destino agregado: pisoactual " + pisoActual + " -> piso " + piso);
+    }
+
+    public void mover() {
+        while (!destinos.isEmpty()) {
+            int destino = destinos.poll();
+            direccion = (destino > pisoActual) ? "subiendo" : "bajando";
+            System.out.println(" Ascensor " + direccion + " hacia el piso " + destino);
+            pisoActual = destino;
+            detenerAscensor();
+        }
+    }
+
+    public void detenerAscensor() {
+        direccion = "detenido";
+        System.out.println(" Llegó al piso " + pisoActual);
+        puerta.abrir();
+        puerta.cerrar(notificaciones);
+    }
+
+    public void activarModoEmergencia() {
+        System.out.println(" Emergencia detectada: deteniendo ascensor.");
+        puerta.abrir();
+        notificaciones.registrarFalla("El ascensor se detuvo por emergencia.");
+    }
+}
