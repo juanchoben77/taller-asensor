@@ -27,4 +27,35 @@ public class boton {
     public void setFuncionando(boolean estado) {
         this.funcionando = estado;
     }
+
+    public static class botonAscensor {
+        private int pisoDestino;
+
+        public botonAscensor(int pisoDestino) {
+            this.pisoDestino = pisoDestino;
+        }
+
+        public void enviarDestino(Ascensor ascensor, Sistemacontrol sistema, Modulonotificaciones notificaciones) {
+            boton b = new boton();
+            b.presionar(notificaciones);
+
+            sistema.recibirSolicitudInterna(pisoDestino);
+        }
+    }
+
+    public static class botonPiso {
+        private String direccion;
+
+        public botonPiso(String direccion) {
+            this.direccion = direccion;
+        }
+
+        public void enviarSolicitud(Sistemacontrol sistema, int piso, Modulonotificaciones notificaciones) {
+            boton b = new boton();
+            b.presionar(notificaciones);
+
+            sistema.recibirSolicitud(piso, direccion);
+        }
+    }
 }
+
