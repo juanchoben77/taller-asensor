@@ -18,7 +18,7 @@ public class Modulonotificaciones {
     }
 
     public void registrarActividad(String mensaje) {
-        System.out.println(" LOG: " + mensaje);
+        System.out.println(" mensaje: " + mensaje);
     }
 
     public void mostrarHistorial() {
