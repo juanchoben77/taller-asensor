@@ -2,6 +2,7 @@ public class boton {
     protected boolean iluminado;
     protected boolean funcionando;
 
+// Constructor (La rutina de "instalación" del botón
     public boton() {
         this.funcionando = true;
         this.iluminado = false;
