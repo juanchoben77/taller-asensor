@@ -7,7 +7,7 @@ public class boton {
         this.funcionando = true;
         this.iluminado = false;
     }
-
+// Método presionar Cuando el usuario interactúa con él
     public void presionar(Modulonotificaciones notificaciones) {
         if (funcionando) {
             iluminar();
@@ -15,7 +15,7 @@ public class boton {
             notificaciones.registrarFalla("Botón defectuoso detectado.");
         }
     }
-
+ // Métodos de Control
     public void iluminar() {
         iluminado = true;
         System.out.println(" Botón iluminado");
@@ -28,7 +28,7 @@ public class boton {
     public void setFuncionando(boolean estado) {
         this.funcionando = estado;
     }
-
+ // herencia para botonasensor
     public static class botonAscensor {
         private int pisoDestino;
 
@@ -43,7 +43,7 @@ public class boton {
             sistema.recibirSolicitudInterna(pisoDestino);
         }
     }
-
+   // herencia
     public static class botonPiso {
         private String direccion;
 
