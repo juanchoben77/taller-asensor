@@ -8,7 +8,7 @@ public class Puerta {
     this.sensorObstaculo = false;
     
    }
-
+// Métodos de Acción
    public void abrir() {
       this.abierta = true;
       System.out.println("x: Puertas abiertas");
@@ -23,7 +23,7 @@ public class Puerta {
       }
 
    }
-
+   // Métodos de Interacción Externa y Control
    public void detectarObstaculo(boolean var1) {
       this.sensorObstaculo = var1;
    }
