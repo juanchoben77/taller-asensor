@@ -1,7 +1,7 @@
 import java.util.Queue;
 import java.util.LinkedList;
 
-//atributos//
+//atributos
 class Ascensor{
     private int pisoActual;
     private String direccion; // "subiendo", "bajando", "detenido"
@@ -10,7 +10,7 @@ class Ascensor{
     private Modulonotificaciones notificaciones;
 
 
-   // Constructor La rutina de "encendido" del Ascensor//
+   // Constructor La rutina de "encendido" del Ascensor
 
     public Ascensor(Modulonotificaciones notificaciones) {
         this.notificaciones = notificaciones;
@@ -19,13 +19,13 @@ class Ascensor{
         puerta = new Puerta();
         destinos = new LinkedList<>();
     }
-    // Método: agregarDestino Cuando alguien presiona un botón//
+    // Método: agregarDestino Cuando alguien presiona un botón
 
     public void agregarDestino(int piso) {
         destinos.add(piso);
         System.out.println(" Destino agregado: pisoactual " + pisoActual + " -> piso " + piso);
     }
-   // Método: mover La lógica central de movimiento//
+   // Método: mover La lógica central de movimiento
     public void mover() {
         while (!destinos.isEmpty()) {
             int destino = destinos.poll();
@@ -36,14 +36,14 @@ class Ascensor{
         }
     }
        
-       // Método: detenerAscensor La rutina de llegada al piso//
+       // Método: detenerAscensor La rutina de llegada al piso
     public void detenerAscensor() {
         direccion = "detenido";
         System.out.println(" Llegó al piso " + pisoActual);
         puerta.abrir();
         puerta.cerrar(notificaciones);
     }
-       // metodo en caso de falla//
+       // metodo en caso de falla
     public void activarModoEmergencia() {
         System.out.println(" Emergencia detectada: deteniendo ascensor.");
         puerta.abrir();
