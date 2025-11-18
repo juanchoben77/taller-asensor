@@ -1,0 +1,19 @@
+public class ejecutor {
+    public static void main(String[] args) {
+
+        Sistemacontrol sistema = new Sistemacontrol(10);
+        Modulonotificaciones notificaciones = sistema.getNotificaciones();
+
+        // PISOS VÁLIDOS: 0 a 9
+        sistema.recibirSolicitud(5, "subir");
+        sistema.recibirSolicitud(9, "bajar");
+
+        // boton interno del ascensor
+        boton.botonAscensor boton5 = new boton.botonAscensor(5);
+        boton5.enviarDestino(sistema.getAscensor(), sistema, sistema.getNotificaciones());
+
+        sistema.getAscensor().activarModoEmergencia();
+
+        notificaciones.mostrarHistorial();
+    }
+}
