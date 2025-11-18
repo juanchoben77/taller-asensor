@@ -3,6 +3,7 @@ public class Piso {
     private botonPiso botonSubir;
     private botonPiso botonBajar;
 
+// constructor 
     public Piso(int numero) {
         this.numero = numero;
         botonSubir = new botonPiso("subir");
@@ -12,6 +13,7 @@ public class Piso {
     public int getNumero() {
         return numero;
     }
+ // Método: solicitarAscensor Cuando alguien presiona el botón en el pasillo
 
     public void solicitarAscensor(SistemaControl sistema, String direccion, Modulonotificaciones notificaciones) {
         if (direccion.equalsIgnoreCase("subir")) {
