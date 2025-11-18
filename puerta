@@ -2,7 +2,7 @@ public class Puerta {
 
    private boolean abierta ;
    private boolean sensorObstaculo;
-
+//constructor
    public Puerta() {
     this.abierta = false;   
     this.sensorObstaculo = false;
