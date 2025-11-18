@@ -10,7 +10,7 @@ class Ascensor{
     private Modulonotificaciones notificaciones;
 
 
-   // Constructor La rutina de "encendido" del Ascensor
+   // Constructor La rutina de encendido del Ascensor
 
     public Ascensor(Modulonotificaciones notificaciones) {
         this.notificaciones = notificaciones;
