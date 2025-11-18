@@ -15,20 +15,20 @@ class SistemaControl {
             pisos.add(new Piso(i));
         }
     }
-
+    // metodo recibirSolicitud Llamada desde un Botón de Piso
     public void recibirSolicitud(int piso, String direccion) {
         notificaciones.registrarActividad("Solicitud recibida desde el piso  " + piso + " para " + direccion);
         ascensor.agregarDestino(piso);
         ascensor.mover();
     }
-
+    // metodo
      public void recibirSolicitudInterna(int pisoDestino) {
     notificaciones.registrarActividad("Solicitud interna desde ascensor hacia el piso " + pisoDestino);
     ascensor.agregarDestino(pisoDestino);
     ascensor.mover();
 }
 
-
+// Getters Para permitir acceso a las instancias clave
     public Modulonotificaciones getNotificaciones() {
         return notificaciones;
     }
